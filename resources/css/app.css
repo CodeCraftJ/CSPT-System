@@ -1,0 +1,133 @@
+﻿@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply min-h-screen bg-slate-50 text-slate-900 antialiased;
+    font-family: 'Figtree', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+
+  ::selection {
+    @apply bg-indigo-500 text-white;
+  }
+}
+
+@layer components {
+  .page-container {
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .page-header {
+    @apply flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between;
+  }
+
+  .page-kicker {
+    @apply text-sm font-semibold uppercase tracking-[0.28em] text-slate-500;
+  }
+
+  .page-title {
+    @apply text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl;
+  }
+
+  .page-subtitle {
+    @apply mt-2 max-w-2xl text-sm leading-6 text-slate-500;
+  }
+
+  .app-card {
+    @apply rounded-[2rem] border border-slate-200/80 bg-white shadow-[0_24px_80px_-40px_rgba(15,23,42,0.28)] ring-1 ring-white/60;
+  }
+
+  .app-card-soft {
+    @apply rounded-[2rem] border border-slate-200/70 bg-slate-50/90 p-6 shadow-[0_20px_50px_-35px_rgba(15,23,42,0.24)] ring-1 ring-white/50;
+  }
+
+  .app-card-interactive {
+    @apply transition duration-200 hover:-translate-y-0.5 hover:border-indigo-200 hover:shadow-[0_28px_60px_-40px_rgba(15,23,42,0.36)];
+  }
+
+  .app-surface {
+    @apply rounded-[2rem] border border-slate-200/80 bg-white shadow-sm ring-1 ring-slate-200/60;
+  }
+
+  .app-input {
+    @apply mt-2 block w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-slate-900 shadow-sm transition placeholder:text-slate-400 focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-100;
+  }
+
+  .app-textarea {
+    @apply mt-2 block min-h-32 w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-slate-900 shadow-sm transition placeholder:text-slate-400 focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-100;
+  }
+
+  .app-file-input {
+    @apply mt-2 block w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-2.5 text-slate-900 shadow-sm transition file:mr-4 file:rounded-xl file:border-0 file:bg-slate-900 file:px-4 file:py-2 file:text-sm file:font-semibold file:text-white hover:file:bg-slate-800 focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-100;
+  }
+
+  .app-select {
+    @apply mt-2 block w-full appearance-none rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-slate-900 shadow-sm transition placeholder:text-slate-400 focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-100;
+  }
+
+  .app-btn-primary {
+    @apply inline-flex items-center justify-center rounded-2xl bg-slate-900 px-5 py-3 text-sm font-semibold text-white shadow-sm transition duration-200 hover:-translate-y-0.5 hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-slate-900 focus:ring-offset-2;
+  }
+
+  .app-btn-secondary {
+    @apply inline-flex items-center justify-center rounded-2xl border border-slate-200 bg-white px-5 py-3 text-sm font-semibold text-slate-700 shadow-sm transition duration-200 hover:-translate-y-0.5 hover:border-slate-300 hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-slate-900 focus:ring-offset-2;
+  }
+
+  .app-btn-danger {
+    @apply inline-flex items-center justify-center rounded-2xl bg-rose-600 px-5 py-3 text-sm font-semibold text-white shadow-sm transition duration-200 hover:-translate-y-0.5 hover:bg-rose-700 focus:outline-none focus:ring-2 focus:ring-rose-500 focus:ring-offset-2;
+  }
+
+  .app-btn-ghost {
+    @apply inline-flex items-center justify-center rounded-2xl border border-transparent px-5 py-3 text-sm font-semibold text-slate-600 transition hover:bg-slate-100 hover:text-slate-900 focus:outline-none focus:ring-2 focus:ring-slate-900 focus:ring-offset-2;
+  }
+
+  .app-label {
+    @apply block text-sm font-semibold text-slate-700;
+  }
+
+  .app-note {
+    @apply text-sm text-slate-500;
+  }
+
+  .app-badge {
+    @apply inline-flex items-center rounded-full px-3 py-1 text-xs font-semibold;
+  }
+
+  .app-table {
+    @apply min-w-full divide-y divide-slate-200 text-left;
+  }
+
+  .app-table thead {
+    @apply bg-slate-50;
+  }
+
+  .app-table th {
+    @apply px-6 py-3 text-xs font-semibold uppercase tracking-[0.2em] text-slate-500;
+  }
+
+  .app-table td {
+    @apply px-6 py-4 text-sm text-slate-700;
+  }
+}
+
+@layer utilities {
+  .bg-hero-subtle {
+    background-image: radial-gradient(circle at top left, rgba(59,130,246,0.18), transparent 25%), radial-gradient(circle at bottom right, rgba(14,165,233,0.12), transparent 22%);
+  }
+
+  .bg-page-grid {
+    background-image:
+      linear-gradient(to right, rgba(148,163,184,0.08) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(148,163,184,0.08) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+}
